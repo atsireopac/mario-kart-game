@@ -1,12 +1,25 @@
 {
   "name": "simulador-de-corridas-do-mario-kart",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/backend/server.js",
+    "dev:frontend": "npx http-server src/frontend -o /index.html",
+    "dev:backend": "nodemon src/backend/server.js",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\""
   },
-  "keywords": [],
+  "keywords": ["mario kart", "racing", "game", "simulator"],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Um simulador de corridas do Mario Kart com interface web",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "http-server": "^14.1.1",
+    "nodemon": "^3.0.3"
+  }
 }
